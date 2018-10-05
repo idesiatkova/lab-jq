@@ -12,7 +12,7 @@ var path = {
     src: { 
         html: 'templates/*.html',
         js: '',
-        scss: 'assets/styles.scss'
+        scss: 'assets/styles/styles.scss'
     },
     build: { 
         html: '',
@@ -22,7 +22,7 @@ var path = {
     watch: { 
         html: '',
         js: '',
-        scss: ''
+        scss: 'assets/styles/'
     },
     clean: './build'
 };
@@ -68,5 +68,23 @@ gulp.task('start', function () {
     });
 });
 
-gulp.task('server', ['sass', 'html', 'start']); 
+gulp.task('server-reload', ['sass', 'html'], function () {
+    browserSync.init({
+        port: 3000,
+        open: true,
+        notify: false,
+        reloadThrottle: 200,
+        reloadDebounce: 1500,
+        server: {
+            baseDir: "./"
+        }
+    });
+    gulp.watch([path.watch.scss + '*.scss'], { interval: 2000 }, ['sass']);
+    gulp.watch(path.build.css + '*.css').on("change", browserSync.reload);
+    gulp.watch([path.watch.html + '*.html'], ['html']).on('change', browserSync.reload);
+    gulp.watch([path.watch.js + '*.js']).on('change', browserSync.reload);
+});
+
+gulp.task('server', ['sass', 'html', 'start']);
+gulp.task('run', ["server-reload"]); 
 gulp.task('default', ["server"]);
