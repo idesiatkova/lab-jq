@@ -10,7 +10,7 @@ var gulp = require('gulp'),
 
 var path = {
     src: { 
-        html: 'templates/*.html',
+        html: 'templates/**/',
         js: '',
         scss: 'assets/styles/styles.scss'
     },
@@ -20,7 +20,8 @@ var path = {
         css: ''
     },
     watch: { 
-        html: '',
+        blocks: 'blocks/**/',
+        html: 'templates/',
         js: '',
         scss: 'assets/styles/'
     },
@@ -82,6 +83,7 @@ gulp.task('server-reload', ['sass', 'html'], function () {
     gulp.watch([path.watch.scss + '*.scss'], { interval: 2000 }, ['sass']);
     gulp.watch(path.build.css + '*.css').on("change", browserSync.reload);
     gulp.watch([path.watch.html + '*.html'], ['html']).on('change', browserSync.reload);
+    gulp.watch([path.watch.blocks + '*.html'], ['html']).on('change', browserSync.reload);
     gulp.watch([path.watch.js + '*.js']).on('change', browserSync.reload);
 });
 
