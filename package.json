@@ -1,0 +1,32 @@
+{
+  "name": "qj-lab",
+  "version": "1.0.0",
+  "description": "",
+  "main": "gulpfile.js",
+  "dependencies": {
+    "gulp": "^3.9.1",
+    "gulp-sourcemaps": "^2.6.4"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.24.7",
+    "gulp-autoprefixer": "^6.0.0",
+    "gulp-bless": "^4.0.1",
+    "gulp-clean-css": "^3.10.0",
+    "gulp-include": "^2.3.1",
+    "gulp-notify": "^3.2.0",
+    "gulp-sass": "^4.0.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/idesiatkova/lab-jq.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/idesiatkova/lab-jq/issues"
+  },
+  "homepage": "https://github.com/idesiatkova/lab-jq#readme"
+}
