@@ -72,7 +72,7 @@ gulp.task('start', function () {
 gulp.task('server-reload', ['sass', 'html'], function () {
     browserSync.init({
         port: 3000,
-        open: true,
+        open: false,
         notify: false,
         reloadThrottle: 200,
         reloadDebounce: 1500,

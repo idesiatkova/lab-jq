@@ -1,0 +1,8 @@
+header {
+    a {
+        @extend .text-white;
+        &:hover {
+            @extend .text-white;           
+        }
+    }
+}
